@@ -20,8 +20,8 @@ def callback():
     json_line = request.get_json()
     json_line = json.dumps(json_line)
     decoded = json.loads(json_line)
-    user = decoded['originalDetectIntenRequest']['payload']['data']['replyToken']
-    userText = decoded['queryResult']['intent'][displayName']
+    user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
+    userText = decoded['queryResult']['intent']['displayName']
     #sendText(user,userText)
     if (userText == 'สวัดดี') :
         sendText(user,'จ้าาาา')
@@ -29,7 +29,7 @@ def callback():
         sendText(user,'บ้ายบาย')
     elif (userText == 'เจอกัน') :
         sendText(user,'จ้า')
-    elif  :
+    else  :
         sendText(user,'จ้า')
     return '',200
 
